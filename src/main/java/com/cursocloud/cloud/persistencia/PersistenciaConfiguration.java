@@ -3,6 +3,8 @@ package com.cursocloud.cloud.persistencia;
 import org.springframework.context.annotation.Bean;
 
 import javax.management.InvalidAttributeValueException;
+
+import java.io.File;
 import java.io.IOException;
 
 
@@ -12,7 +14,14 @@ public class PersistenciaConfiguration {
     @Bean
     IPersonaGBD getIPersonaGDB() throws InvalidAttributeValueException, NumberFormatException, IOException
     {
-      return new PersonaTextGBD();
+      PersonaTextGBD gbd = new PersonaTextGBD();
+
+      File f = new File("datos.txt");
+
+      gbd.load(f);
+
+      return gbd;     
+
     }
     
 }
