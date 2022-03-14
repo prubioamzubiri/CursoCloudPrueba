@@ -1,8 +1,5 @@
 package com.cursocloud.cloud.persistencia.hibernateconfig;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-
 import com.cursocloud.cloud.dominio.Persona;
 
 import org.hibernate.Session;
@@ -11,14 +8,6 @@ import org.hibernate.cfg.Configuration;
 
 
 public class hibernateConfig {
-
-    private static String getProperty(String data, String defaultValue){
-        String info = System.getProperty(data);
-        if (info == null){
-          info = defaultValue;
-        }
-        return info;
-    }
 
     public static Session getHibernateSession()
     {
@@ -39,7 +28,7 @@ public class hibernateConfig {
       String connectionURL;
 
       // -Ddbhost=host -Ddbport=port -Ddbdatabase=databasename
-      // String host = (System.getProperty("dbhost")==null)? "127.0.0.1":System.getProperty(data);
+
       String host = getProperty("dbhost", "127.0.0.1");
       String port = getProperty("dbport","3306");
       String database = getProperty("dbdatabase","database1");
@@ -58,5 +47,13 @@ public class hibernateConfig {
       return cfg;
 
     }
+
+    private static String getProperty(String data, String defaultValue){
+      String info = System.getProperty(data);
+      if (info == null){
+        info = defaultValue;
+      }
+      return info;
+  }
     
 }

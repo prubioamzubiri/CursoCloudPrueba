@@ -1,7 +1,5 @@
 package com.cursocloud.cloud.dominio;
 
-import org.springframework.web.client.HttpServerErrorException.NotImplemented;
-
 public class Persona {
     
     private String id;
