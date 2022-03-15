@@ -67,6 +67,6 @@ public class Persona {
 
     public boolean mayorDeEdad() throws Exception
     {
-        throw new Exception("Not Implemented Exception");
+        return age>=18;
     }
 }
