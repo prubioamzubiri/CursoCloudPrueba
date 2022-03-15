@@ -16,3 +16,17 @@ jobs:
           java-version: 1.13
       - name: Maven Package and Tests
         run: mvn -B clean package
+      - name: build dockerFile
+        run: docker build -t test .
+      - name: deploy docker
+        run: docker run -d -p 8080:8080 test
+      - name: sleep cochino
+        run: sleep 5
+      - name: docker ps
+        run: docker ps
+      - name: test curl
+        run: curl localhost:8080/persona/0001
+      - name: know own ip
+        run: curl icanhazip.com
+      - name: dormir
+        run: sleep 60
