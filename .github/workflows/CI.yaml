@@ -21,7 +21,7 @@ jobs:
       - name: deploy docker
         run: docker run -d -p 8080:8080 test
       - name: sleep cochino
-        run: sleep 3
+        run: sleep 5
       - name: docker ps
         run: docker ps
       - name: test curl
