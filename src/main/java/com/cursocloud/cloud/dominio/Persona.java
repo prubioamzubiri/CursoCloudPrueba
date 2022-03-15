@@ -69,4 +69,9 @@ public class Persona {
     {
         return age>=18;
     }
+
+    public int return17()
+    {
+        return 17;
+    }
 }
