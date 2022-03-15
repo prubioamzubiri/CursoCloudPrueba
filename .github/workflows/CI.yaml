@@ -20,5 +20,7 @@ jobs:
         run: docker build -t test .
       - name: deploy docker
         run: docker run -d -p 8080:8080 test
+      - name: sleep cochino
+        run: sleep 3
       - name: test curl
-        run: curl localhost:8080/persona/init
+        run: curl localhost:8080/persona/0001
