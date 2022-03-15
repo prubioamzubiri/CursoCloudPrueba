@@ -49,4 +49,12 @@ public class PersonaTest {
         assertEquals(result19, expResult19);
 
     }
+
+    @Test
+    public void bromaTest()
+    {
+        Persona persona17 = new Persona("a","b",17);
+        int numero = persona17.return17();
+        assertEquals(17, numero);
+    }
 }
