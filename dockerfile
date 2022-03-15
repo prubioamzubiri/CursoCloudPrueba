@@ -1,1 +1,1 @@
-FROM nothing
+FROM alpine:latest
