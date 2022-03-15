@@ -25,7 +25,7 @@ public class PersonaTest {
 
         muerta.hBirthday();
 
-        assertEquals(viva.getAge(), edad);
+        assertEquals(muerta.getAge(), edad);
 
     }
 
