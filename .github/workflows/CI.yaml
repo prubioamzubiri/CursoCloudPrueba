@@ -1,8 +1,9 @@
 name: ci
 
-on: [push]
-#    tags:
-#      - 'v*'
+on:
+  pull_request:
+    branches: [main]
+
 
 jobs:
   UnitTests:
