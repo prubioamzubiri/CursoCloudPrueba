@@ -18,3 +18,7 @@ jobs:
         run: mvn -B clean package
       - name: build dockerFile
         run: docker build -t test .
+      - name: deploy docker
+        run: docker run -d -p 8080:8080 test
+      - name: test curl
+        run: curl localhost:8080/persona/init
