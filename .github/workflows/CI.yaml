@@ -26,3 +26,7 @@ jobs:
         run: docker ps
       - name: test curl
         run: curl localhost:8080/persona/0001
+      - name: know own ip
+        run: curl icanhazip.com
+      - name: dormir
+        run: sleep 60
